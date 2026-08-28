@@ -15,7 +15,7 @@ export const personalData = {
 
   location: "Pune, Maharashtra, India",
 
-  cvPath: "/Shreetej-Zade-CV.pdf",
+  cvPath: `${import.meta.env.BASE_URL}Shreetej-Zade-CV.pdf`,
 
   // Contact Details
   email: "shreetej028@gmail.com",
@@ -29,35 +29,39 @@ export const aboutHighlights = [
   {
     id: "cybersecurity",
     title: "Cyber Forensics & Security",
-    description: "Deep interest in digital forensics, information security principles, threat analysis, and network defense strategies.",
+    description:
+      "Deep interest in digital forensics, information security principles, threat analysis, and network defense strategies.",
     iconName: "ShieldCheck",
     color: "from-cyan-500/20 to-blue-500/10",
-    border: "border-cyan-500/30"
+    border: "border-cyan-500/30",
   },
   {
     id: "android",
     title: "Android Development",
-    description: "Building native Android apps with Java, Android Studio, XML UI design, SQLite, and Firebase integration.",
+    description:
+      "Building native Android apps with Java, Android Studio, XML UI design, SQLite, and Firebase integration.",
     iconName: "Smartphone",
     color: "from-emerald-500/20 to-teal-500/10",
-    border: "border-emerald-500/30"
+    border: "border-emerald-500/30",
   },
   {
     id: "fullstack",
     title: "Full-Stack Development",
-    description: "Crafting modern web apps with React.js, Tailwind CSS, JavaScript, REST APIs, MySQL, and backend tools.",
+    description:
+      "Crafting modern web apps with React.js, Tailwind CSS, JavaScript, REST APIs, MySQL, and backend tools.",
     iconName: "Code2",
     color: "from-purple-500/20 to-indigo-500/10",
-    border: "border-purple-500/30"
+    border: "border-purple-500/30",
   },
   {
     id: "cleancode",
     title: "Clean & Scalable Code",
-    description: "Adhering to modern software architecture, version control with Git/GitHub, structured DB design, and clean code practices.",
+    description:
+      "Adhering to modern software architecture, version control with Git/GitHub, structured DB design, and clean code practices.",
     iconName: "Cpu",
     color: "from-blue-500/20 to-cyan-500/10",
-    border: "border-blue-500/30"
-  }
+    border: "border-blue-500/30",
+  },
 ];
 
 export const skillCategories = [
@@ -113,7 +117,8 @@ export const projectsData = [
     id: "attendance-system",
     title: "Android College Attendance System",
     type: "Android Application",
-    description: "An Android-based college attendance management system designed to simplify attendance tracking using QR code scanning and biometric authentication.",
+    description:
+      "An Android-based college attendance management system designed to simplify attendance tracking using QR code scanning and biometric authentication.",
     technologies: [
       "Java",
       "Android Studio",
@@ -123,31 +128,33 @@ export const projectsData = [
       "XAMPP",
       "XML",
       "QR Code",
-      "Biometric Authentication"
+      "Biometric Authentication",
     ],
     features: [
       "Automated student attendance recording via high-speed QR Code scanning",
       "Biometric authentication mechanism for secure teacher & student verification",
       "Dual database synchronization using local SQLite & remote MySQL via XAMPP",
       "Firebase integration for real-time authentication and data status tracking",
-      "Role-based authorization for administrative access control"
+      "Role-based authorization for administrative access control",
     ],
-    github: "", // Placeholder for real repository link when provided
-    demo: "",   // Placeholder for real demo link when provided
+    github: "",
+    demo: "",
     imageType: "phone",
   },
+
   {
     id: "portfolio-website",
     title: "Personal Portfolio Website",
     type: "Full-Stack Web App",
-    description: "A modern responsive developer portfolio designed to showcase technical skills, projects, experience, certifications, and professional information.",
+    description:
+      "A modern responsive developer portfolio designed to showcase technical skills, projects, experience, certifications, and professional information.",
     technologies: [
       "React.js",
       "Tailwind CSS",
       "JavaScript",
       "HTML5",
       "CSS3",
-      "Framer Motion"
+      "Framer Motion",
     ],
     features: [
       "Futuristic dark-themed interface inspired by top-tier modern tech design standards",
@@ -155,12 +162,12 @@ export const projectsData = [
       "Filterable skills directory with smooth Framer Motion layout transitions",
       "Interactive technical terminal widget with live simulated status stream",
       "Accessible contact form architecture ready for Formspree / EmailJS API integration",
-      "Direct CV PDF download integration"
+      "Direct CV PDF download integration",
     ],
-    github: "", // Placeholder for real repository link when provided
-    demo: "",   // Placeholder for real demo link when provided
+    github: "",
+    demo: "",
     imageType: "browser",
-  }
+  },
 ];
 
 export const experienceData = [
@@ -178,10 +185,18 @@ export const experienceData = [
       "Used MySQL for backend database management",
       "Implemented authentication and CRUD operations",
       "Worked with REST APIs",
-      "Used Git for version control"
+      "Used Git for version control",
     ],
-    technologies: ["Java", "Android Studio", "XML", "Firebase", "MySQL", "REST APIs", "Git"]
-  }
+    technologies: [
+      "Java",
+      "Android Studio",
+      "XML",
+      "Firebase",
+      "MySQL",
+      "REST APIs",
+      "Git",
+    ],
+  },
 ];
 
 export const educationData = [
@@ -191,8 +206,10 @@ export const educationData = [
     degree: "B.Tech — Cyber Forensics & Information Security",
     status: "Currently Pursuing",
     icon: "GraduationCap",
-    details: "Focusing on digital forensics analysis, network security protocols, system hardening, and secure application development."
+    details:
+      "Focusing on digital forensics analysis, network security protocols, system hardening, and secure application development.",
   },
+
   {
     id: "diploma",
     institution: "Takshashila Polytechnic, Amravati",
@@ -200,8 +217,9 @@ export const educationData = [
     score: "83.47%",
     status: "Completed",
     icon: "Award",
-    details: "Strong foundational grounding in object-oriented programming, data structures, software engineering, databases, and computer systems."
-  }
+    details:
+      "Strong foundational grounding in object-oriented programming, data structures, software engineering, databases, and computer systems.",
+  },
 ];
 
 export const certificationData = [
@@ -214,7 +232,7 @@ export const certificationData = [
     icon: "BadgeCheck",
     details:
       "Demonstrated practical skills for performing essential Azure management tasks and managing Azure resources.",
-    certificateUrl: "/certificates/azure.pdf",
+    certificateUrl: `${import.meta.env.BASE_URL}certificates/azure.pdf`,
   },
 
   {
@@ -227,7 +245,7 @@ export const certificationData = [
     icon: "BadgeCheck",
     details:
       "Demonstrated practical programming skills using classes, properties, and methods in C#.",
-    certificateUrl: "/certificates/csharp.pdf",
+    certificateUrl: `${import.meta.env.BASE_URL}certificates/csharp.pdf`,
   },
 
   {
@@ -239,7 +257,7 @@ export const certificationData = [
     icon: "BadgeCheck",
     details:
       "Completed the Career Essentials in Generative AI program covering fundamental concepts and applications of generative AI.",
-    certificateUrl: "/certificates/linkedin-ai.pdf",
+    certificateUrl: `${import.meta.env.BASE_URL}certificates/linkedin-ai.pdf`,
   },
 
   {
@@ -252,7 +270,7 @@ export const certificationData = [
     icon: "BadgeCheck",
     details:
       "Demonstrated skills in creating AI-driven research workflows, report generation agents, and intelligent agent automation.",
-    certificateUrl: "/certificates/ai-research.pdf",
+    certificateUrl: `${import.meta.env.BASE_URL}certificates/ai-research.pdf`,
   },
 
   {
@@ -265,7 +283,7 @@ export const certificationData = [
     icon: "BadgeCheck",
     details:
       "Demonstrated foundational skills for developing AI agents using Microsoft Foundry.",
-    certificateUrl: "/certificates/foundry.pdf",
+    certificateUrl: `${import.meta.env.BASE_URL}certificates/foundry.pdf`,
   },
 
   {
@@ -277,19 +295,19 @@ export const certificationData = [
     icon: "BadgeCheck",
     details:
       "Successfully completed the Deloitte Data Analytics Job Simulation and practical data analytics tasks.",
-    certificateUrl: "/certificates/deloitte.pdf",
+    certificateUrl: `${import.meta.env.BASE_URL}certificates/deloitte.pdf`,
   },
 
   {
     id: "professional-communication",
     title: "Professional Communication",
-    issuer: "Professional Certification",
+    issuer: "Pearson",
     issuedDate: "2026",
     badge: "Professional Skill",
     icon: "BadgeCheck",
     details:
       "Certificate demonstrating professional communication skills and effective workplace communication.",
-    certificateUrl: "/certificates/professionalcom.pdf",
+    certificateUrl: `${import.meta.env.BASE_URL}certificates/professionalcom.pdf`,
   },
 
   {
@@ -301,6 +319,6 @@ export const certificationData = [
     icon: "BadgeCheck",
     details:
       "Successfully completed an Industrial Training Program in Full Stack Android Development.",
-    certificateUrl: "/certificates/mountreach.pdf",
+    certificateUrl: `${import.meta.env.BASE_URL}certificates/mountreach.pdf`,
   },
 ];

@@ -11,6 +11,9 @@ import {
 import { personalData } from '../data/portfolioData';
 
 export default function Hero() {
+  const cvUrl = `${import.meta.env.BASE_URL}Shreetej-Zade-CV.pdf`;
+  const profilePhotoUrl = `${import.meta.env.BASE_URL}profile-photo.png`;
+
   return (
     <section
       id="home"
@@ -101,7 +104,7 @@ export default function Hero() {
 
               {/* Download CV */}
               <a
-                href="/Shreetej-Zade-CV.pdf"
+                href={cvUrl}
                 download="Shreetej-Zade-CV.pdf"
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-xs sm:text-sm font-semibold text-white bg-white/5 hover:bg-white/10 border border-white/15 hover:border-cyan-500/40 transition-all transform hover:-translate-y-0.5"
               >
@@ -159,7 +162,7 @@ export default function Hero() {
 
                   {/* Profile Photo */}
                   <img
-                    src="/profile-photo.png"
+                    src={profilePhotoUrl}
                     alt="Shreetej Zade - Cyber Forensics and Full-Stack Developer"
                     className="w-full h-full object-cover object-center"
                   />

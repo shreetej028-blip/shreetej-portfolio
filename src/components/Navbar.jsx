@@ -19,6 +19,8 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState('home');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const cvUrl = `${import.meta.env.BASE_URL}Shreetej-Zade-CV.pdf`;
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -28,8 +30,10 @@ export default function Navbar() {
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const sectionEl = document.getElementById(sections[i]);
+
         if (sectionEl) {
           const top = sectionEl.offsetTop;
+
           if (scrollPosition >= top) {
             setActiveSection(sections[i]);
             break;
@@ -39,7 +43,10 @@ export default function Navbar() {
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   return (
@@ -52,7 +59,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          
+
           {/* Brand Logo & Name */}
           <a
             href="#home"
@@ -65,10 +72,12 @@ export default function Navbar() {
                 </span>
               </div>
             </div>
+
             <div className="flex flex-col">
               <span className="text-sm sm:text-base font-bold tracking-tight text-white group-hover:text-cyan-400 transition-colors">
                 Shreetej Zade
               </span>
+
               <span className="text-[10px] tracking-wider text-slate-400 uppercase font-mono hidden sm:inline">
                 Cyber Forensics & Dev
               </span>
@@ -79,22 +88,31 @@ export default function Navbar() {
           <nav className="hidden lg:flex items-center gap-1 bg-dark-900/80 p-1.5 rounded-full border border-white/10 backdrop-blur-md">
             {navItems.map((item) => {
               const isActive = activeSection === item.href.substring(1);
+
               return (
                 <a
                   key={item.name}
                   href={item.href}
                   className={`relative px-3.5 py-1.5 text-xs font-medium transition-colors rounded-full ${
-                    isActive ? 'text-white font-semibold' : 'text-slate-400 hover:text-slate-200'
+                    isActive
+                      ? 'text-white font-semibold'
+                      : 'text-slate-400 hover:text-slate-200'
                   }`}
                 >
                   {isActive && (
                     <motion.div
                       layoutId="activeTab"
                       className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/40 rounded-full"
-                      transition={{ type: 'spring', duration: 0.5 }}
+                      transition={{
+                        type: 'spring',
+                        duration: 0.5,
+                      }}
                     />
                   )}
-                  <span className="relative z-10">{item.name}</span>
+
+                  <span className="relative z-10">
+                    {item.name}
+                  </span>
                 </a>
               );
             })}
@@ -102,14 +120,18 @@ export default function Navbar() {
 
           {/* Right Action Buttons */}
           <div className="hidden sm:flex items-center gap-3">
+
+            {/* CV Button */}
             <a
-              href="/Shreetej-Zade-CV.pdf"
+              href={cvUrl}
               download="Shreetej-Zade-CV.pdf"
               className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-medium text-slate-300 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-cyan-500/30 transition-all focus:outline-none focus:ring-2 focus:ring-cyan-500"
             >
               <Download className="w-3.5 h-3.5 text-cyan-400" />
               <span>CV</span>
             </a>
+
+            {/* Contact Button */}
             <a
               href="#contact"
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-xl text-xs font-semibold text-slate-950 bg-gradient-to-r from-cyan-400 via-teal-300 to-emerald-400 hover:from-cyan-300 hover:to-emerald-300 shadow-md shadow-cyan-500/20 hover:shadow-cyan-500/30 transition-all focus:outline-none focus:ring-2 focus:ring-cyan-400"
@@ -123,9 +145,15 @@ export default function Navbar() {
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="lg:hidden p-2 rounded-xl bg-dark-900 border border-white/10 text-slate-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-cyan-500"
-            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-label={
+              mobileMenuOpen ? 'Close menu' : 'Open menu'
+            }
           >
-            {mobileMenuOpen ? <X className="w-5 h-5 text-cyan-400" /> : <Menu className="w-5 h-5" />}
+            {mobileMenuOpen ? (
+              <X className="w-5 h-5 text-cyan-400" />
+            ) : (
+              <Menu className="w-5 h-5" />
+            )}
           </button>
         </div>
       </div>
@@ -141,8 +169,11 @@ export default function Navbar() {
             className="lg:hidden bg-dark-950/95 border-b border-white/10 backdrop-blur-2xl overflow-hidden mt-3 shadow-2xl"
           >
             <div className="max-w-7xl mx-auto px-4 py-4 space-y-2">
+
               {navItems.map((item) => {
-                const isActive = activeSection === item.href.substring(1);
+                const isActive =
+                  activeSection === item.href.substring(1);
+
                 return (
                   <a
                     key={item.name}
@@ -155,14 +186,17 @@ export default function Navbar() {
                     }`}
                   >
                     <span>{item.name}</span>
+
                     <ChevronRight className="w-4 h-4 text-slate-500" />
                   </a>
                 );
               })}
 
               <div className="pt-4 grid grid-cols-2 gap-3 border-t border-white/10">
+
+                {/* Mobile CV */}
                 <a
-                  href="/Shreetej-Zade-CV.pdf"
+                  href={cvUrl}
                   download="Shreetej-Zade-CV.pdf"
                   onClick={() => setMobileMenuOpen(false)}
                   className="flex items-center justify-center gap-2 py-3 rounded-xl text-xs font-semibold text-slate-200 bg-white/5 border border-white/10"
@@ -170,6 +204,8 @@ export default function Navbar() {
                   <Download className="w-4 h-4 text-cyan-400" />
                   Download CV
                 </a>
+
+                {/* Mobile Contact */}
                 <a
                   href="#contact"
                   onClick={() => setMobileMenuOpen(false)}
@@ -178,6 +214,7 @@ export default function Navbar() {
                   <Mail className="w-4 h-4" />
                   Contact Me
                 </a>
+
               </div>
             </div>
           </motion.div>
